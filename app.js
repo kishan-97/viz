@@ -2,9 +2,8 @@ const express=require('express');
 const app=express();
 const PORT=process.env.PORT || 4000;
 const path=require('path');
-
 const mongoose=require('mongoose');
-mongoose.connect(process.env.MONGO_URL).then(()=>console.log("Database Connected")).catch(e=>console.log(e));
+mongoose.connect('mongodb://localhost:27017/Docs').then(()=>console.log("Database Connected")).catch(e=>console.log(e));
 
 const Data_Route=require('./routes/data_route');
 
